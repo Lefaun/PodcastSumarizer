@@ -8,8 +8,14 @@ st.title("Podcast Summaries")
 json_files = glob.glob('*.json')
 
 episode_id = st.sidebar.text_input("Episode ID")
-button = st.sidebar.button("Download Episode summary", on_click=save_transcript, args=(episode_id,))
 
+button = st.sidebar.button("Download Episode summary", on_click=save_transcript, args=(episode_id,))
+button1 = st.sidebar.button("Download Episode summary", on_click=save_transcript, args=(episode_id,))
+button2 = st.sidebar.button("Humor", on_click=save_transcript, args=(episode_id, ))
+button2 = st.sidebar.button("Politics", on_click=save_transcript, args=(episode_id, ))
+button4 = st.sidebar.button("News", on_click=save_transcript, args=(episode_id,))
+button5 = st.sidebar.button("Music", on_click=save_transcript, args=(episode_id,))
+button6 = st.sidebar.button("Medicine", on_click=save_transcript, args=(episode_id,))
 
 def get_clean_time(start_ms):
     seconds = int((start_ms / 1000) % 60)
