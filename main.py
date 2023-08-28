@@ -29,22 +29,22 @@ def get_clean_time(start_ms):
     return start_t
 
 
-if button:
-    filename = episode_id + '_chapters.json'
-    print(filename)
-    with open(filename, 'r') as f:
-        data = json.load(f)
-
-    chapters = data['chapters']
-    episode_title = data['episode_title']
-    thumbnail = data['thumbnail']
-    podcast_title = data['podcast_title']
-    audio = data['audio_url']
-
-    st.header(f"{podcast_title} - {episode_title}")
-    st.image(thumbnail, width=200)
-    st.markdown(f'#### {episode_title}')
-
-    for chp in chapters:
-        with st.expander(chp['gist'] + ' - ' + get_clean_time(chp['start'])):
-            chp['summary']
+    if button:
+        filename = episode_id + '_chapters.json'
+        print(filename)
+        with open(filename, 'r') as f:
+            data = json.load(f)
+    
+        chapters = data['chapters']
+        episode_title = data['episode_title']
+        thumbnail = data['thumbnail']
+        podcast_title = data['podcast_title']
+        audio = data['audio_url']
+    
+        st.header(f"{podcast_title} - {episode_title}")
+        st.image(thumbnail, width=200)
+        st.markdown(f'#### {episode_title}')
+    
+        for chp in chapters:
+            with st.expander(chp['gist'] + ' - ' + get_clean_time(chp['start'])):
+                chp['summary']
