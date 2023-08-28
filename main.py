@@ -9,8 +9,8 @@ json_files = glob.glob('*.json')
 
 episode_id = st.sidebar.text_input("Episode ID")
 
-button = st.sidebar.button("Download Episode summary", on_click=save_transcript, args=(episode_id,))
-button1 = st.sidebar.button("Download Episode summary", on_click=save_transcript, args=(episode_id,))
+button0 = st.sidebar.button("Download Episode summary", on_click=save_transcript, args=(episode_id,))
+
 button2 = st.sidebar.button("Humor", on_click=save_transcript, args=(episode_id, ))
 button3 = st.sidebar.button("Politics", on_click=save_transcript, args=(episode_id, ))
 button4 = st.sidebar.button("News", on_click=save_transcript, args=(episode_id,))
